@@ -1,0 +1,74 @@
+/* 
+How to make bouncing ball
+Animation With SASS
+Follow Me @or_abdillh
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #FFD54F;
+  position: relative;
+  display: grid;
+  place-items: center;
+  
+  &::before {
+    width: 60px;
+    height: 8px;
+    display: block;
+    content: "";
+    background: rgba($color: black, $alpha: .7);
+    position: absolute;
+    bottom: 20px;
+    border-radius: 50%;
+    animation: shadow 1.2s ease-out infinite;
+  }
+  
+  .ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    background: white;
+    animation: ballBouncing 1.2s ease-out infinite;
+  }
+}
+
+@keyframes ballBouncing {
+  0%, 100% {
+    transform: scale(1.5, .5)
+  } 25% {
+    transform: scaleY(1.2)
+  } 40%, 80% {
+    transform: translateY(-18rem)
+  } 70% {
+    transform: translateY(-19rem)
+  } 90% {
+    transform: translateY(0)
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: scale(1.5, .5)
+  } 25% {
+    transform: scale(.8, 1.5)
+  } 40%, 80% {
+    transform: scale(.7, .5)
+  } 70% {
+    transform: scale(.6, .5)
+  } 90% {
+    transform: scale(1)
+  }
+}
